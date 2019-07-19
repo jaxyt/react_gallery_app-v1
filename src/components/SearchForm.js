@@ -10,7 +10,9 @@ class SearchForm extends Component{
       onSearchChange = e => {
         this.setState({ searchText: e.target.value });
       }
-      
+      /**
+       * On submission, updates the pics state with performSearch and then, using withRouter it updates the path
+       */
       handleSubmit = e => {
         e.preventDefault();
         this.props.onSearch(this.query.value);
