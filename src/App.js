@@ -22,6 +22,9 @@ class App extends Component {
     this.performSearch();
   }
 
+  /**
+   * Uses the Unsplash api to get search results
+   */
   performSearch = (query = "cats") => {
     this.setState({loading: true});
     axios.get(`https://api.unsplash.com/photos/random?client_id=${apiKey.accessKey}&query=${query}&count=3`)
@@ -41,6 +44,9 @@ class App extends Component {
       })
   }
   
+  /**
+   * Passes a title parameter to dynamically title pages
+   */
   Home = (title = "Home") => {
     return (
       <div className="container">
